@@ -1508,13 +1508,17 @@ public class GpsLocationProvider implements LocationProviderInterface {
                     " ephemerisMask: " + Integer.toHexString(mSvMasks[EPHEMERIS_MASK]) +
                     " almanacMask: " + Integer.toHexString(mSvMasks[ALMANAC_MASK]));
             for (int i = 0; i < svCount; i++) {
+                int svMask = ((mSvs[i] > 0) && (mSvs[i] <= 32)) ? (1 << (mSvs[i] - 1)) : 0;
                 Log.v(TAG, "sv: " + mSvs[i] +
                         " snr: " + mSnrs[i]/10 +
                         " elev: " + mSvElevations[i] +
                         " azimuth: " + mSvAzimuths[i] +
-                        ((mSvMasks[EPHEMERIS_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "  " : " E") +
-                        ((mSvMasks[ALMANAC_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "  " : " A") +
-                        ((mSvMasks[USED_FOR_FIX_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "" : "U"));
+//                        ((mSvMasks[EPHEMERIS_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "  " : " E") +
+//                        ((mSvMasks[ALMANAC_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "  " : " A") +
+//                        ((mSvMasks[USED_FOR_FIX_MASK] & (1 << (mSvs[i] - 1))) == 0 ? "" : "U"));
+                        ((mSvMasks[EPHEMERIS_MASK] & svMask) == 0 ? "  " : " E") +
+                        ((mSvMasks[ALMANAC_MASK] & svMask) == 0 ? "  " : " A") +
+                        ((mSvMasks[USED_FOR_FIX_MASK] & svMask) == 0 ? "" : "U"));
             }
         }
 

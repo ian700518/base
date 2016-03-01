@@ -149,7 +149,8 @@ public final class GpsStatus {
         
         for (i = 0; i < svCount; i++) {
             int prn = prns[i] - 1;
-            int prnShift = (1 << prn);
+//            int prnShift = (1 << prn);
+            int prnShift = ((prn >= 0) && (prn < 32)) ? (1 << prn) : 0;
             if (prn >= 0 && prn < mSatellites.length) {
                 GpsSatellite satellite = mSatellites[prn];
     
