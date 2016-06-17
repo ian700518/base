@@ -37,7 +37,7 @@
 
     <bool name="def_bluetooth_on">false</bool>
     <bool name="def_wifi_display_on">false</bool>
-    <bool name="def_install_non_market_apps">false</bool>
+    <bool name="def_install_non_market_apps">true</bool>
     <bool name="def_package_verifier_enable">true</bool>
     <!-- Comma-separated list of location providers.
          Network location is off by default because it requires
@@ -47,7 +47,7 @@
     <bool name="assisted_gps_enabled">true</bool>
     <bool name="def_netstats_enabled">true</bool>
     <bool name="def_usb_mass_storage_enabled">true</bool>
-    <bool name="def_wifi_on">false</bool>
+    <bool name="def_wifi_on">true</bool>
     <!-- 0 == never, 1 == only when plugged in, 2 == always -->
     <integer name="def_wifi_sleep_policy">2</integer>
     <bool name="def_networks_available_notification_on">true</bool>
@@ -78,7 +78,7 @@
     <string name="def_trusted_sound" translatable="false">/system/media/audio/ui/Trusted.ogg</string>
     <string name="def_wireless_charging_started_sound" translatable="false">/system/media/audio/ui/WirelessChargingStarted.ogg</string>
 
-    <bool name="def_lockscreen_disabled">false</bool>
+    <bool name="def_lockscreen_disabled">true</bool>
     <bool name="def_device_provisioned">false</bool>
     <integer name="def_dock_audio_media_enabled">1</integer>
 
@@ -184,7 +184,7 @@
     <string name="def_immersive_mode_confirmations" translatable="false"></string>
 
     <!-- Default for Settings.Global.WIFI_SCAN_ALWAYS_AVAILABLE -->
-    <integer name="def_wifi_scan_always_available">0</integer>
+    <integer name="def_wifi_scan_always_available">1</integer>
 
     <!-- Default for Settings.Secure.LOCK_SCREEN_SHOW_NOTIFICATIONS, 1==on -->
     <integer name="def_lock_screen_show_notifications">1</integer>
